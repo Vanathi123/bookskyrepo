@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+body {
+    position: relative; /* Instead of absolute */
+    background-color: white;
+}
+
+#first {
+    width: 100%;
+    height: auto;
+    background-color: rgb(197, 14, 100);
+}
+
+#first h1 {
+    padding: 20px;
+}
+
+#main > div {
+    margin: 20px; /* Reduced margin */
+    background-color: black;
+    color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    float: left;
+}
+
+#main {
+    padding: 30px;
+    clear: both; /* Clear float to contain floating elements */
+}
+
+#third {
+    border: 2px solid black;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgb(197, 14, 100);
+    border-radius: 100%;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.second h1 {
+    color: rgb(197, 14, 100);
+}
+
+.second p {
+    margin: 10px;
+}
+
+.second button {
+    margin: 20px;
+    padding: 10px 20px; /* Adjusted padding */
+    background-color: rgb(197, 14, 100);
+    border-radius: 50px;
+    width: 100px;
+    border: none; /* Remove border */
+    color: white; /* Text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+form {
+    width: 300px;
+    height: auto; /* Changed height */
+    background-color: rgb(197, 14, 100);
+    border: 2px solid black;
+    box-shadow: 0 0 10px black; /* Corrected box-shadow syntax */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment */
+    padding: 20px; /* Increased padding */
+    z-index: 2;
+    text-align: center;
+    display: none;
+}
+
+#form input {
+    margin: 5px;
+    padding: 5px;
+    border:none;
+    border-bottom: 2px solid black;
+    width:100%;
+    
+}
+input::placeholder,textarea::placeholder{
+    color:black;
+    font-weight:bold;
+    padding: 10px;
+}
+textarea::placeholder{
+    font-size: 15px;
+}
+textarea{
+    width:250px;
+    margin:10px;
+
+}
+form button{
+    margin:10px;
+    color: white;
+    background-color: black;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    display: none; /* initially hidden */
+    z-index: 1; /* ensure it appears above other content */
+}
+
+
+
+
+

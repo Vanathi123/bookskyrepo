@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+        <div id="first">
+            <h1>BOOKSKY</h1>
+        </div>
+
+        <div id="pop"></div>
+    </div>
+
+    <div id="main">
+        <div class="second">
+            <h1>RICH DAD POOR DAD</h1>
+            <p>ROBERT</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique perspiciatis accusantium, dicta ad exercitationem dolorem id neque reprehenderit nostrum qui laborum earum architecto.</p>
+            <button onclick="dele(this)">Delete</button>
+        </div>
+    </div>
+    <div id="overlay">
+
+    </div>
+
+    <form id="form" style="display: none;">
+        <h1>ADD BOOKSKY</h1>
+        <input id="title" type="text" placeholder="Book Title"><br>
+        <input id="author" type="text" placeholder="Book Author"><br>
+        <textarea id="text" placeholder="Short Description.."></textarea><br>
+        <button type="button" onclick="subadd()">ADD</button>
+        <button type="button" onclick="cancel()">CANCEL</button>
+    </form>
+    <div id="third">
+        <p onclick="add()">+</p>
+    </div>
+
+    <script>
+        function dele(button) {
+            button.parentElement.remove();
+        }
+
+        function add() {
+            var opa=document.getElementById("overlay");
+            opa.style.opacity= "0.9";
+            opa.style.display="block"
+            var form = document.getElementById("form");
+            form.style.display = "block";
+        }
+
+        function subadd() {
+            var opa=document.getElementById("overlay");
+            opa.style.display="none"
+            var title = document.getElementById("title").value;
+            var author = document.getElementById("author").value;
+            var description = document.getElementById("text").value;
+
+            var main = document.getElementById("main");
+
+            var div = document.createElement("div");
+            div.className = "second";
+
+            var h1 = document.createElement("h1");
+            h1.textContent = title;
+            div.appendChild(h1);
+
+            var pAuthor = document.createElement("p");
+            pAuthor.textContent = author;
+            div.appendChild(pAuthor);
+
+            var pDescription = document.createElement("p");
+            pDescription.textContent = description;
+            div.appendChild(pDescription);
+
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function() {
+                dele(this);
+            };
+            div.appendChild(deleteButton);
+
+            main.appendChild(div);
+            
+            
+
+            // Reset form fields and hide the form
+            document.getElementById("title").value = "";
+            document.getElementById("author").value = "";
+            document.getElementById("text").value = "";
+            document.getElementById("form").style.display = "none";
+        }
+
+        function cancel() {
+            document.getElementById("form").style.display = "none";
+        }
+    </script>
+</body>
+</html>
